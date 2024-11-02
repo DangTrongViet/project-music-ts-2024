@@ -1,5 +1,4 @@
 /* Header */
-
 .header {
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
@@ -22,14 +21,10 @@
 
 .header .inner-menu > ul > li {
     margin-left: 20px;
-
 }
 /* End header */
 
-
-
 /* Footer */
-
 .footer {
     background: #333;
     color: #fff;
@@ -38,8 +33,7 @@
 }
 /* End Footer */
 
-/* box-head */
-
+/* Box Head */
 .box-head {
     margin-bottom: 30px;
 }
@@ -50,11 +44,9 @@
     font-weight: 600;
     color: green;
 }
+/* End Box Head */
 
-/* End boxx-head */
-
-/* song-item */
-
+/* Song Item */
 .song-item {
     display: flex;
     border: 1px solid #ddd;
@@ -71,76 +63,95 @@
 .song-item .inner-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover
+    object-fit: cover;
 }
 
 .song-item .inner-content {
     padding: 10px;
-    flex:1;
+    flex: 1;
 }
 
 .song-item .inner-content .inner-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
     white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     display: -webkit-box;
+}
+
+.song-item .inner-content .inner-singer,
+.song-item .inner-content .inner-like,
+.song-item .inner-content .inner-time {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
     margin-bottom: 5px;
 }
 
-/*  song item inner content */
-/* casix - song item inner content */
-
-.inner-content .inner-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.inner-content .inner-singer {
+.song-item .inner-content .inner-singer {
     color: #666;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
 }
 
-.inner-content .inner-singer i {
-    margin-right: 5px; /* Khoảng cách giữa icon và tên ca sĩ */
+.song-item .inner-content .inner-like {
+    color: #0059ff;
+
 }
 
-.inner-content .inner-like {
-    color: #ff6347; /* Màu cam đỏ để làm nổi bật số lượt thích */
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.inner-content .inner-like i {
-    margin-right: 5px;
-}
-
-.inner-content .inner-time {
+.song-item .inner-content .inner-time {
     color: #999;
     font-size: 12px;
-    display: flex;
-    align-items: center;
 }
 
-.inner-content .inner-time i {
+.song-item .inner-content .inner-singer i,
+.song-item .inner-content .inner-like i,
+.song-item .inner-content .inner-time i {
     margin-right: 5px;
 }
 
 
-/* singer detail */
+.song-item .inner-content .inner-heart.active {
+    color: #b90000;
+}
+
+.song-item .inner-content .inner-heart.active i {
+    font-weight: 900;
+}
+/* End Song Item */
+
+/* Singer Detail */
+.singer-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.singer-detail .inner-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    border: 5px solid #F57F20;
+    animation: spin 12s linear infinite paused;
+}
+
+.singer-detail .inner-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .singer-detail .inner-title {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 10px;
     color: #F57F20;
 }
+
 .singer-detail .inner-actions {
     display: flex;
     align-items: center;
@@ -155,81 +166,43 @@
     display: inline-flex;
     align-items: center;
     font-weight: 600;
-    color: #646464
+    color: #646464;
 }
+
 .singer-detail .inner-actions .inner-action i {
     font-size: 16px;
     margin-right: 5px;
 }
-.singer-detail .inner-actions .inner-like {
+
+.singer-detail .inner-actions .inner-like,
+.singer-detail .inner-actions .inner-heart {
     cursor: pointer;
 }
+
 .singer-detail .inner-actions .inner-like i {
-    color: #0059ff
+    color: #0059ff;
 }
-.singer-detail .inner-actions .inner-heart{
-    cursor: pointer;
-}
+
 .singer-detail .inner-actions .inner-heart i {
     color: #b90000;
 }
-.singer-detail .inner-actions .inner-like.active {
-    color: #0059ff;
-}
+
+.singer-detail .inner-actions .inner-like.active,
 .singer-detail .inner-actions .inner-like.active i {
+    color: #0059ff;
     font-weight: 900;
 }
 
-.singer-detail .inner-actions .inner-heart.active{
-    cursor: pointer;
-}
 .singer-detail .inner-actions .inner-heart.active i {
     font-weight: 900;
-}
-
-.singer-detail {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
 }
 
 .singer-detail .inner-play .inner-audio {
     flex: 1;
 }
 
-
-.singer-detail .inner-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 20px;
-    border: 5px solid #F57F20;
-    animation-name: spin;
-    animation-duration: 12s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-play-state: paused;
-
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-    
-}
-.singer-detail .inner-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .singer-detail .inner-desc {
-    border:1px solid #ddd;
+    border: 1px solid #ddd;
     border-radius: 6px;
     margin-bottom: 20px;
 }
@@ -242,8 +215,95 @@
     border-bottom: 1px solid #ddd;
 }
 
-.singer-detail .inner-desc .inner-text{
+.singer-detail .inner-desc .inner-text {
     font-size: 14px;
     padding: 10px 15px;
 }
-/* end singer detail */
+/* End Singer Detail */
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* box-search */
+.box-search {
+    position: relative;
+}
+
+.box-search .inner-suggest {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    z-index: 1;
+    overflow: auto;
+    display: none;
+}
+
+.box-search .inner-suggest.show {
+    display: block;
+}
+
+.box-search .inner-suggest .inner-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.box-search .inner-suggest .inner-item:hover {
+    background: #efefef;
+    text-decoration: none;
+}
+
+
+.box-search .inner-suggest .inner-item:last-child {
+    border-bottom: 0;
+}
+
+.box-search .inner-suggest .inner-item .inner-image {
+    width: 60px;
+    aspect-ratio:  1/1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.box-search .inner-suggest .inner-item .inner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box-search .inner-suggest .inner-item .inner-info {
+    flex: 1;
+    margin-left: 10px;
+}
+.box-search .inner-suggest .inner-item .inner-info .inner-title {
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #4d007d
+}
+
+.box-search .inner-suggest .inner-item .inner-info .inner-singer {
+    font-size:  13px;
+    font-weight: 500;
+    color: #282828;
+    margin-bottom: 2px;
+
+}
