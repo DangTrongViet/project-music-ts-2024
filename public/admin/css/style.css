@@ -1,0 +1,159 @@
+
+.badge-success {
+    background-color: #28a745; /* Màu nền xanh lá cây */
+    color: #000; /* Màu chữ đen */
+    font-weight: bold; /* Chữ đậm */
+}
+.badge-danger {
+    background-color: #dc3545; /* Màu nền đỏ */
+    color: #000; /* Màu chữ đen */
+    font-weight: bold; /* Chữ đậm */
+}
+
+[show-alert]{
+    position: fixed;
+    top: 70px;
+    right: 15px;
+    z-index:9999;
+}
+
+[show-alert].alert-hidden{
+    animation-name: alert-hidden;
+    animation-duration: 0.5s ;
+    animation-fill-mode: both;
+}
+
+@keyframes alert-hidden{
+    from{
+        right: 15px;
+    }
+    to{
+        right: -100%;
+        display: none;
+    }
+}
+
+[show-alert] [close-alert]{
+    background: #ffffffff;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+/* End show 
+
+/*Image Preview*/
+.image-preview{
+    width:150px;
+    height:auto;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+
+}
+.image-preview[src=""]{
+    display: none;
+
+}
+/* Body */
+
+.body .sider {
+    width: 150px;
+    background: #323232;
+    color: #fff;
+    height: calc(100vh - 56px);
+    position: fixed;
+    top: 56px;
+    left: 0;
+}
+
+.body .main {
+    margin: 15px;
+    position: relative;
+    left: 150px;
+    width: calc(100% - 380px);
+}
+
+/*End Image Preview*/
+/* Sidebar (Sider) Styling */
+.sider {
+    width: 250px; /* Độ rộng khi mở */
+    background-color: #343a40; /* Màu nền tối */
+    color: #fff; /* Màu chữ */
+    height: 100vh; /* Chiều cao toàn màn hình */
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    overflow-y: auto; /* Cuộn khi nội dung dài */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Hiệu ứng đổ bóng */
+    transition: width 0.3s ease; /* Hiệu ứng chuyển đổi khi thu gọn */
+    z-index: 1000;
+}
+
+.sider .inner-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sider .inner-menu ul {
+    padding-left: 0;
+}
+
+.sider .inner-menu ul li {
+    margin: 0;
+}
+
+.sider .inner-menu ul li a {
+    display: block;
+    padding: 15px 20px; /* Khoảng cách bên trong các mục */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sider .inner-menu ul li a:hover {
+    background-color: #555; /* Màu nền khi hover */
+    color: #ddd; /* Màu chữ khi hover */
+}
+
+.sider .inner-menu ul li a.active {
+    background-color: #007bff; /* Màu nền cho mục đang chọn */
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Nội dung chính */
+.main-content {
+    margin-left: 250px; /* Đẩy nội dung sang phải khi sider mở rộng */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Hiệu ứng mượt khi sidebar thay đổi kích thước */
+}
+
+/* Header */
+.header {
+    background: #202020;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header .inner-logo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.form-group {
+    margin-bottom: 20px; /* Thêm khoảng cách giữa các nhóm form */
+}
