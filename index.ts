@@ -22,7 +22,7 @@ clientRoutes(app);
 // Admin Routes
 adminRoutes(app);
 
-app.use(express.static(`${__dirname}public`));
+app.use(express.static(`${__dirname}/public`));
 
 
 app.locals.prefixAdmin = systemConfig.prefixAdmin;
