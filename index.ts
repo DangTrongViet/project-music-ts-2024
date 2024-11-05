@@ -2,6 +2,7 @@ import express, { Express } from "express";
 import * as database from "./config/database";
 import dotenv from "dotenv";
 import path from "path";
+import methodOverride from "method-override";
 
 import clientRoutes from "./routes/client/index.route";
 import adminRoutes from "./routes/admin/index.route";
@@ -14,18 +15,19 @@ database.connect();
 const app : Express = express();
 const port: Number | String = process.env.PORT || 3000;
 
-
+app.use(methodOverride("_method"));
 // CLient Routes
 clientRoutes(app);
 
 // Admin Routes
 adminRoutes(app);
 
-app.use(express.static("public"));
+app.use(express.static(`${__dirname}public`));
+
 
 app.locals.prefixAdmin = systemConfig.prefixAdmin;
 
-app.set("views", "./views");
+app.set("views", `${__dirname}/views`);
 app.set('view engine', 'pug');
 
 
