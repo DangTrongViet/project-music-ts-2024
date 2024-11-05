@@ -41,7 +41,7 @@ const port = process.env.PORT || 3000;
 app.use((0, method_override_1.default)("_method"));
 (0, index_route_1.default)(app);
 (0, index_route_2.default)(app);
-app.use(express_1.default.static(`${__dirname}public`));
+app.use(express_1.default.static(`${__dirname}/public`));
 app.locals.prefixAdmin = config_1.systemConfig.prefixAdmin;
 app.set("views", `${__dirname}/views`);
 app.set('view engine', 'pug');
